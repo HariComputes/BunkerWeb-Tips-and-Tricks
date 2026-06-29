@@ -6,6 +6,7 @@ My bunkerweb is installed using the basic setup for linux. (Not docker, K8s or S
 I'm quite new to BunkerWeb, but I can see there's a lot you can do in the UI. or you can even skip the UI and do everything in the configs sections. Like adding additional locations to services and stuff. Or managing various headers in terms of passthrough, overwriting and setting. Below are just some things I did to make it work for me and how i want it to.
 
 I found it best to use the Basic Setup for linux so you can read the code, see configs and change and test accordingly. 
+<br>
 
 ## Table of Contents
 
@@ -22,8 +23,11 @@ I found it best to use the Basic Setup for linux so you can read the code, see c
 
 <!--te-->
 
+<br>
 
-### nginx testing config, applying temporary custom config. (A faster way of testing)
+---
+
+## nginx testing config, applying temporary custom config. (A faster way of testing)
 
 You can make changes to the nginx config (Everything in `/etc/nginx/` essentially) and reload nginx with `nginx -s reload` and parse configs with `nginx -t`. This allows you to test stuff behind BunkerWeb's back. However, once you change something, the scheduler will recreate everything. so no fear of losing original configs. unless you forgot what you change in BunkerWeb's UI.
 
@@ -33,8 +37,10 @@ This is really beneficial as you can quickly make config changes by changing fil
 
 I also found that when the config files didn't work, the notifications on the webpage were unclear if new changes were applied or if the old notification about nginx config test failed.
 
+<br>
 
-### 444 Default Server Response
+---
+## 444 Default Server Response
 I migrated from nginx to bunkerweb, which uses nginx under the hood. I had set my original reverse proxy up to server a 444 for anything that was not listed as a server name.
 
 When I migrated to bunkerweb it was finicky getting it exactly how I wanted it. This may seem superfluous, but I believe in technology being our tools, and we should make it do what we want if possible.
@@ -57,7 +63,10 @@ In this file on line 90. I added `return 444;`
 
 And that's all there is for this.
 
-### 444 Default Server Response shows a certificate error
+<br>
+
+---
+## 444 Default Server Response shows a certificate error
 
 New issue. When default server loads. Even though I've specified my certificates in the global settings. When loading default server, It would show a warning for www.example.com cert's not aligning to my domain.
 
@@ -66,7 +75,10 @@ After further investigation. The certs are hard coded in the file `/usr/share/bu
 Here is the default cert's commented and my certs listed:
 <img width="1525" height="677" alt="image" src="https://github.com/user-attachments/assets/687f30bc-2aa3-4217-b237-3aaa9d4fd4de" />
 
-### Vaultwarden (and maybe Bitwarden) Login/2fa issues when HTTP errors are intercepted
+<br>
+
+---
+## Vaultwarden (and maybe Bitwarden) Login/2fa issues when HTTP errors are intercepted
 
 When you log into Vaultwarden/Bitwarden and 2fa is set. You get a document with json body response but the http code on that result is a 400. So if you have intercept HTTP errors enabled. This document gets intercepted and you get bunkerweb's 403 page instead of a json bodied response.
 
@@ -80,7 +92,10 @@ So the next best thing I found to do was disable intercept for only specific URI
 
 As you can see above, you can set this in the config section. Just make sure you include a the trailing slash if required. As that can also cause issues and keep the log in from working.
 
-### Home Assistant Add On Web UI's not working. 400 responses and "URL / does not match base url"
+<br>
+
+---
+## Home Assistant Add On Web UI's not working. 400 responses and "URL / does not match base url"
 
 If you've got home assistant and you're running addon's that have their own UI. In my case i had ESPHome and Home-Assistant-Matter-Hub. But if you try and load these through bunkerweb, they'd fail to load. I was getting error 400's.
 
