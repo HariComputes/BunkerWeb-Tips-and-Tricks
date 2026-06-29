@@ -12,7 +12,7 @@ I found it best to use the Basic Setup for linux so you can read the code, see c
 <!--ts-->
    * [Intro](#BunkerWeb-Tips-and-Tricks)
    * [Table of Contents](#Table-of-Contents)
-
+<br><br>
    * [nginx testing config, applying temporary custom config. (A faster way of testing)](#nginx-testing-config-applying-temporary-custom-config-a-faster-way-of-testing)
    * [444 Default Server Response](#444-Default-Server-Response)
    * [444 Default Server Response shows a certificate error](#444-Default-Server-Response-shows-a-certificate-error)
