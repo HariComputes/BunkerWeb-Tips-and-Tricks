@@ -13,11 +13,11 @@ I found it best to use the Basic Setup for linux so you can read the code, see c
    * [Intro](#BunkerWeb-Tips-and-Tricks)
    * [Table of Contents](#Table-of-Contents)
 
-   * [nginx testing config, applying temporary custom config. (A faster way of testing)](#nginx-testing-config,-applying-temporary-custom-config.-(A-faster-way-of-testing))
+   * [nginx testing config, applying temporary custom config. (A faster way of testing)](#nginx-testing-config-applying-temporary-custom-config-a-faster-way-of-testing)
    * [444 Default Server Response](#444-Default-Server-Response)
    * [444 Default Server Response shows a certificate error](#444-Default-Server-Response-shows-a-certificate-error)
-   * [Vaultwarden (and maybe Bitwarden) Login/2fa issues when HTTP errors are intercepted](#Vaultwarden-(and-maybe-Bitwarden)-Login/2fa-issues-when-HTTP-errors-are-intercepted)
-   * [Home Assistant Add On Web UI's not working. 400 responses and "URL / does not match base url"](#Home-Assistant-Add-On-Web-UI's-not-working.-400-responses-and-"URL-/-does-not-match-base-url")
+   * [Vaultwarden (and maybe Bitwarden) Login/2fa issues when HTTP errors are intercepted](#Vaultwarden-and-maybe-Bitwarden-Login/2fa-issues-when-HTTP-errors-are-intercepted)
+   * [Home Assistant Add On Web UI's not working. 400 responses and "URL / does not match base url"](#home-assistant-add-on-web-uis-not-working-400-responses-and-url--does-not-match-base-url)
 
 
 <!--te-->
