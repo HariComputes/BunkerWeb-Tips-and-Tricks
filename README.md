@@ -90,7 +90,29 @@ So the next best thing I found to do was disable intercept for only specific URI
 
 <img width="1292" height="293" alt="image" src="https://github.com/user-attachments/assets/02e94b10-83a5-4cd3-a401-a55954a34928" />
 
-As you can see above, you can set this in the config section. Just make sure you include a the trailing slash if required. As that can also cause issues and keep the log in from working.
+Codeblock:
+```
+location /identity/connect/ {
+    #error_page 400 = @pass_through;
+    proxy_pass https://vaultwarden-default$request_uri;
+    proxy_intercept_errors off;
+}
+
+#location @pass_through {
+#    internal;
+#    proxy_pass https://vaultwarden-default$request_uri;
+#}
+
+location /identity/accounts/prelogin {
+    #error_page 400 = @pass_through;
+    proxy_pass https://vaultwarden-default$request_uri;
+    proxy_intercept_errors off;
+}
+```
+
+As you can see above, you can set this in the config section. Just make sure you include a the trailing slash if required. As that can also cause issues and keep the log in from working aswell.
+
+(Sidenote: vaultwarden-default is the host i've setup for bitwarden as I have another piece of config that sets up bitwarden as an upstream server. Which is config it inherited from it's previous nginx setup before I migrated to BunkerWeb)
 
 <br>
 
